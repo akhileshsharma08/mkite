@@ -2,8 +2,7 @@
 import React from "react";
 // import { useRef } from "react";
 import Image from "next/image";
-import mypic from "../../../public/assets/myimg.png";
-import styled from "styled-components";
+
 import {
   BsArrowRight,
   BsArrowDownCircle,
@@ -13,7 +12,6 @@ import {
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
 import { Satisfy ,Dangrek,Oswald,Quantico,Audiowide} from "next/font/google";
-// import hover3d from "../utils/hover";
 import { Tilt } from 'react-tilt'
 
 
@@ -56,22 +54,6 @@ import { Tilt } from 'react-tilt'
 
 const Hero = () => {
 
-//   if (typeof window !== 'undefined') {
-//     // Code that relies on DOM or browser APIs
-//     var hero = useRef<HTMLDivElement>(null);
-    
-//     const hoverHero = hover3d(hero, {
-//       x: 30,
-//       y: -40,
-//     z: 30,
-//   });
-  
-//   const imageHover = hover3d(hero, {
-//     x: 20,
-//     y: -5,
-//     z: 11,
-//   });
-// }
  
   return (
     <div className="pt-20 pb-20 bg-slate-950 text-white min-h-screen" >
