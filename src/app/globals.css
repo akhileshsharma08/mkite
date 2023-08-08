@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.mynametext{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+}
+.lastname{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px; 
+}
+.firstname:hover{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px; 
+}
