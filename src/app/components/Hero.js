@@ -2,7 +2,7 @@
 import React from "react";
 // import { useRef } from "react";
 import Image from "next/image";
-
+import mypic from '../../../public/assets/myimg.png'
 import {
   BsArrowRight,
   BsArrowDownCircle,
