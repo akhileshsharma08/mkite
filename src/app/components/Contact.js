@@ -17,7 +17,7 @@ const Contact = () => {
         <h1 className={`${satisfy.className} text-center py-8 text-8xl text-gray-600 `}>Enquiry</h1>
       <div className="   flex justify-around items-center">
         <div className="flex justify-center items-center w-1/4">
-          <h1 className={`${oswald.className} text-8xl dont-bold text-zinc-100`}>Let's Connect. </h1>
+          <h1 className={`${oswald.className} text-8xl dont-bold text-zinc-100`}>Let's Connect . </h1>
           <h1 className=" text-4xl font-extrabold text-green-500">
             <BsArrowRight />
           </h1>
