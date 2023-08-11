@@ -11,8 +11,8 @@ const Experience = () => {
     <>
       <div className="exp-section py-8 bg-slate-900 text-white">
         <div className="container my-4">
-          <div className="row flex justify-center items-center mx-auto my-8">
-            <div className="w-1/2 text-center">
+          <div className="row flex justify-center md:flex-row flex-col items-center mx-auto my-8">
+            <div className="md:w-1/2 w-full text-center">
               <h1 className={`${satisfy.className} text-7xl  text-gray-700 -skew-y-6`}>
                 Experience
               </h1>
@@ -30,7 +30,7 @@ const Experience = () => {
               </div>
              
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2 w-full md:p-0 p-4">
               <h1 className="text-gray-500 font-bold my-2 capitalize">Problem Solver</h1>
               <p className="capitalize my-2 text-xl ">
                 i enjoying solving problems with clean scalable solutions.i have

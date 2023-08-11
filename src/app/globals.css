@@ -21,3 +21,25 @@ box-sizing: border-box;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 2px; 
 }
+.slide-out{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    transform-origin: top;
+}
+.globe{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    /* place-items: center; */
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    cursor: grabbing;
+    background-color: cadetblue;
+    object-fit: cover;
+    overflow: hidden;
+}
