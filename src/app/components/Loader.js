@@ -6,12 +6,14 @@ import { Audiowide } from "next/font/google";
 import skull from "../../../public/assets/skull.gif";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
+import { ContextData } from "@/context/Context";
 const audio = Audiowide({
   subsets: ["latin"],
   weight: "400",
 });
 
 const Loader = () => {
+const {myname} = ContextData()
   const [Loading, setLoading] = useState(true);
   return (
     <motion.div
@@ -31,7 +33,7 @@ const Loader = () => {
         >
           <span className="lastname text-green-500 stroke-current bg-transparent">
             <Typewriter
-              words={["Akhilesh Sharma"]}
+              words={[`${myname}`]}
               loop={1}
               cursor
               cursorStyle="_<"

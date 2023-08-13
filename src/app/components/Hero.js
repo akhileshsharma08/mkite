@@ -9,13 +9,12 @@ import { ContextData } from "@/context/Context";
 import { BsArrowDownCircle, BsLinkedin, BsGithub } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-scroll";
-import {
-  
-  Audiowide,  
-  Share_Tech_Mono,
-} from "next/font/google";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Audiowide, Share_Tech_Mono } from "next/font/google";
 import { Tilt } from "react-tilt";
-
+import { TypeAnimation } from "react-type-animation";
+import { useScroll, useTransform } from "framer-motion";
 const audiowide = Audiowide({
   subsets: ["latin"],
   weight: "400",
@@ -36,27 +35,33 @@ const defaultOptions = {
   reset: true, // If the tilt effect has to be reset on exit.
   easing: "cubic-bezier(.105,.195,.150,.200)",
 };
-
-
+// =========================================================
 const Hero = () => {
+  const { scrollYProgress } = useScroll();
+  const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
   const [isLoading, setIsLoading] = useState(true);
-  const { empData, loading,myname } = ContextData();
+  const { empData, loading, myname } = ContextData();
   const [sorted, setSorted] = useState([]);
 
-console.log(myname,"fetched on hero using context")
-console.log(empData,"empdata fetched on hero using context")
+  console.log(myname, "fetched on hero using context");
+  console.log(empData, "empdata fetched on hero using context");
 
   useEffect(() => {
-    
-    let updatedItem = empData.filter((curElement) => {
-      console.log(curElement.name,"curr")
-      return curElement.name === `nitin`;
+    AOS.init({
+      offset: 100,
     });
-    setSorted(updatedItem)
-    console.log(sorted,"sorted")
-    console.log(updatedItem,"updated")
   }, []);
 
+  useEffect(() => {
+    let updatedItem = empData.filter((curElement) => {
+
+      console.log(curElement.name, "curr");
+      return curElement.name === `nitin`;
+    });
+    setSorted(updatedItem);
+    console.log(sorted, "sorted");
+    console.log(updatedItem, "updated");
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -70,11 +75,11 @@ console.log(empData,"empdata fetched on hero using context")
       opacity: 1,
       scale: 1,
       transition: {
-        duration:0.5,
+        duration: 0.5,
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   if (isLoading) {
@@ -85,7 +90,8 @@ console.log(empData,"empdata fetched on hero using context")
       initial={{ y: 950 }}
       animate={{ y: 0 }}
       transition={{ ease: [0.6, 0.26, 0.32, 0.9], duration: 0.1 }}
-      className=" pb-20 bg-slate-950 text-white min-h-screen" id="home"
+      className=" pb-20 bg-slate-950 text-white min-h-screen"
+      id="home"
     >
       <div className="container mx-auto ">
         <div className="row flex md:flex-row flex-col justify-between items-center py-8 px-8">
@@ -95,15 +101,15 @@ console.log(empData,"empdata fetched on hero using context")
                 hi there
               </h1>
               <motion.h2
-              initial={{
-                x: -100,
-                scale: 0.5,
-              }}
-              animate={{
-                x: 0,
-                scale: 1,
-              }}
-              transition={{ duration: 0.5 }}
+                initial={{
+                  x: -100,
+                  scale: 0.5,
+                }}
+                animate={{
+                  x: 0,
+                  scale: 1,
+                }}
+                transition={{ duration: 0.5 }}
                 className={`md:text-8xl text-6xl font-bold my-4 uppercase overflow-hidden ${audiowide.className}`}
               >
                 <span className="firstname">Akhilesh</span>{" "}
@@ -118,6 +124,16 @@ console.log(empData,"empdata fetched on hero using context")
                 a professional developer and cloud engineer with 2+ yrs of
                 experience{" "}
               </p>
+              {/* <TypeAnimation
+                sequence={[
+                  `Welcome to my website!\nI'm a Developer\nand a Designer.`,
+                  1000,
+                  "",
+                ]}
+                speed={50}
+                style={{ whiteSpace: "pre-line", fontSize: "2em" }}
+                repeat={Infinity}
+              /> */}
             </div>
             <div className="social">
               <ul className="list-none flex justify-center items-center">
@@ -126,8 +142,8 @@ console.log(empData,"empdata fetched on hero using context")
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                
-                  className="text-3xl text-green-500 hover:text-green-600 mx-2">
+                    className="text-3xl text-green-500 hover:text-green-600 mx-2"
+                  >
                     <BsLinkedin />
                   </motion.li>{" "}
                 </Link>
@@ -136,17 +152,18 @@ console.log(empData,"empdata fetched on hero using context")
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                 className="text-3xl text-green-500 hover:text-green-600 mx-2">
+                    className="text-3xl text-green-500 hover:text-green-600 mx-2"
+                  >
                     <BsGithub />
                   </motion.li>{" "}
                 </Link>
                 <Link href={"/"}>
-                  <motion.li 
-                  
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="text-3xl text-green-500 hover:text-green-600 mx-2">
+                  <motion.li
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="text-3xl text-green-500 hover:text-green-600 mx-2"
+                  >
                     <MdEmail />
                   </motion.li>{" "}
                 </Link>
@@ -155,12 +172,12 @@ console.log(empData,"empdata fetched on hero using context")
           </div>
           {/* img section */}
           <motion.div
-          
-          variants={container}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 1 }}
-          className={`${container}  Imagecontent2 flex justify-between items-center md:mt-0 mt-6`}>
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 1 }}
+            className={`${container}  Imagecontent2 flex justify-between items-center md:mt-0 mt-6`}
+          >
             <div>
               <Tilt
                 options={defaultOptions}
@@ -179,25 +196,23 @@ console.log(empData,"empdata fetched on hero using context")
             </div>
           </motion.div>
         </div>
-        <h1 className=" mynametext md:text-8xl animate-pulse text-6xl text-zinc-600 text-center justify-items-stretch hover:text-green-500 hover:cursor-pointer  tracking-widest">
+        <h1 style={{ x }}
+          data-aos="zoom-in"
+          data-aos-delay="800"
+          className=" mynametext ease-in duration-200 transition-all md:text-8xl animate-pulse text-6xl text-zinc-600 text-center justify-items-stretch hover:text-green-500 hover:cursor-pointer  tracking-widest"
+        >
           AKHILESH SHARMA
         </h1>
       </div>
       <div className=" flex justify-center mt-6 mb-4">
-       <Link to="experience"
-            spy={true}
-            smooth={true}
-            duration={500}>
-       <h1 className="text-3xl animate-bounce text-center text-green-500">
-          <BsArrowDownCircle />
-        </h1>
-       </Link> 
+        <Link to="experience" spy={true} smooth={true} duration={500}>
+          <h1 className="text-3xl animate-bounce hover:cursor-pointer text-center text-green-500">
+            <BsArrowDownCircle />
+          </h1>
+        </Link>
       </div>
-
-   
     </motion.div>
   );
 };
-
 
 export default Hero;

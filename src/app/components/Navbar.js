@@ -4,12 +4,14 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 // import Link from "next/link";
 import Image from "next/image";
 // import Logo from '../../public/assets/Logo.png'
+
 import { SiGooglehome } from "react-icons/si";
 import { TbCertificate2 } from "react-icons/tb";
 import { MdOutlineContacts } from "react-icons/md";
 import { motion } from "framer-motion";
 import { Satisfy, Dancing_Script, Audiowide } from "next/font/google";
 import { Link } from "react-scroll";
+import { ContextData } from "@/context/Context";
 
 const dsc = Dancing_Script({
   subsets: ["latin"],
@@ -21,6 +23,8 @@ const audio = Audiowide({
 });
 
 const Navbar = () => {
+const {  myname } = ContextData();
+
   return (
     <header className="text-white  body-font bg-slate-950 ">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -38,7 +42,7 @@ const Navbar = () => {
           <span
             className={`${audio.className} ml-3 md:text-2xl text-lg text-white hover:text-green-500`}
           >
-            Akhilesh @ Monsterbrains
+            {myname} @ Monsterbrains
           </span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center font-normal justify-center text-2xl">
