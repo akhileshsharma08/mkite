@@ -1,26 +1,32 @@
+'use client'
 import React from "react";
-
+import Image from "next/image";
+import Link from "next/link";
+import Logo from '../../../public/assets/Logo.svg'
+import { motion } from "framer-motion";
 const Footer = () => {
+
+  const icon = {
+    hidden: {
+      opacity: 0,
+      pathLength: 0,
+      fill: "rgba(220, 255, 136, 0)"
+    },
+    visible: {
+      opacity: 1,
+      pathLength: 1,
+      fill: "rgba(0, 255, 0, 1)"
+    }
+  };
   return (
     <>
-      <footer className="text-gray-600 body-font ">
-        <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span className="ml-3 text-xl">Monsterbrains</span>
-          </a>
-          <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+      <footer className="text-white body-font bg-slate-900 border-green-500  border-t-2">
+        <div className="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
+          <Link href={'/'} className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <Image src={Logo} width={180} height={80} alt="logo"/>
+            <span className="ml-3 text-xl"></span>
+          </Link>
+          <p className="text-sm text-gray-50 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
             © {new Date().getFullYear()} Monsterbrains developed by —
             <a
               href="/"

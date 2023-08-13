@@ -1,15 +1,19 @@
-import React from "react";
+'use client'
+import React,{useState} from "react";
 import { Satisfy } from "next/font/google";
 import TechndWork from "./TechndWork";
+import { motion } from "framer-motion";
 const satisfy = Satisfy({
   subsets: ["latin"],
   weight: "400",
 });
 
 const Experience = () => {
+
+
   return (
     <>
-      <div className="exp-section py-8 bg-slate-900 text-white">
+      <div className="exp-section py-8 bg-slate-900 text-white" id="experience">
         <div className="container my-4">
           <div className="row flex justify-center md:flex-row flex-col items-center mx-auto my-8">
             <div className="md:w-1/2 w-full text-center">
@@ -30,7 +34,8 @@ const Experience = () => {
               </div>
              
             </div>
-            <div className="md:w-1/2 w-full md:p-0 p-4">
+            <div 
+       className="md:w-1/2 w-full md:p-0 p-4">
               <h1 className="text-gray-500 font-bold my-2 capitalize">Problem Solver</h1>
               <p className="capitalize my-2 text-xl ">
                 i enjoying solving problems with clean scalable solutions.i have

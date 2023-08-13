@@ -17,7 +17,7 @@ const oswald = Oswald({
 
 const Contact = () => {
   return (
-    <div className="bg-slate-950 text-white px-12 py-20">
+    <div className="bg-slate-950 text-white px-12 py-20" id="contact">
         <h1 className={`${satisfy.className} text-center py-8 text-8xl text-gray-600 `}>Enquiry</h1>
       <div className="   flex justify-center items-center md:flex-row flex-col">
         <div></div>

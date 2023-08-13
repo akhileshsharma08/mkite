@@ -4,6 +4,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 // import { MyContext } from "@/context/Context";
 
+import Context from "@/context/Context";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,15 +15,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      {/* <MyContext> */}
-        <body className={inter.className}>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      {/* </MyContext> */}
+      <body className={inter.className}>
+      <Context>
+        <Navbar />
+        {children}
+        <Footer />
+      </Context>
+      </body>
+ 
     </html>
   );
 }

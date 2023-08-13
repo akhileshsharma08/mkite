@@ -1,17 +1,16 @@
-import Image from 'next/image'
-import Hero from './components/Hero'
-import Experience from './components/Experience'
-import Contact from './components/Contact'
-import ZoomSection from './components/ZoomSection'
+
+import List from './components/List'
+import MyHome from './components/MyHome'
 
 export default function Home() {
   return (
     <main className="  ">
-      <Hero/>
+      <List/>
+      {/* <Hero/>
       <Experience/>
-      <Contact/>
+      <Contact/> */}
       {/* <ZoomSection/> */}
-     
+     {/* <MyHome/> */}
       
     </main>
   )

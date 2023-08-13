@@ -1,42 +1,43 @@
 'use client'
 
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-export const MyContext = createContext()
+ const MyContext = createContext()
 
-const Context = ({children}) => {
-    const [empData,setEmpData] = useState([])
-    const [loading,SetLoading] = useState(true)
+//  main context start 
+const Context = ({ children }) => {
+  const [empData,setEmpData]= useState([])
+  const [loading,setLoading]= useState(true)
+  const [myname,setMyName]= useState('')
 
-    const handleData= async()=>{
-      const res= await fetch(`https://6458a1858badff578ef64314.mockapi.io/mkite/`)
-      console.log(res.json())
-      
-      return res.data
-
-
-    }
-
-
-    useEffect(() => {
-        // Fetch data from your API and update apiData state
-        const fetchData = async () => {
-          try {
-            const response = await fetch(`https://6458a1858badff578ef64314.mockapi.io/mkite/`);
-            const data = await response.json();
-            setEmpData(data);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
+  useEffect(()=>{
+ 
+  //  const fetchdata= async()=>{
+       fetch('https://6458a1858badff578ef64314.mockapi.io/mkite/')
+          .then(res => res.json())
+          .then(data => {
+            const myempData =  data
+           setEmpData(myempData)
+            setLoading(false)
+          })
+    // }
+ 
+ 
+   
+// fetchdata()
+  },[])
+  
+// console.log(empData,"empData context")
 
   return (
-    <MyContext.Provider value={{empData}} >{children}</MyContext.Provider>
+    <MyContext.Provider value={{ empData,setEmpData,loading,setLoading,myname,setMyName }}>
+      {children}
+    </MyContext.Provider>
   )
 }
 
-export default Context
+export default Context;
+
+export function ContextData(){
+  return useContext(MyContext)
+}
