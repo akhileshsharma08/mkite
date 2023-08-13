@@ -22,7 +22,7 @@ const Contact = () => {
       <div className="   flex justify-center items-center md:flex-row flex-col">
         <div></div>
         <div className="flex justify-center items-center md:w-1/2 w-full my-4 text-center ">
-          <h1 className={`${oswald.className} text-8xl dont-bold text-zinc-100`}> <span>Let's</span> <br /><span>Connect.</span>  </h1>
+          <h1 className={`${oswald.className} text-8xl dont-bold text-zinc-100`}> <span>Let&apos;s</span> <br /><span>Connect.</span>  </h1>
           <h1 className=" text-4xl font-extrabold text-green-500">
             <BsArrowRight />
           </h1>

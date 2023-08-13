@@ -11,7 +11,7 @@ import { MdEmail } from "react-icons/md";
 import { Link } from "react-scroll";
 import {
   
-  Audiowide,
+  Audiowide,  
   Share_Tech_Mono,
 } from "next/font/google";
 import { Tilt } from "react-tilt";
