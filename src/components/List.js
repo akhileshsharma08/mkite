@@ -7,7 +7,7 @@ const List = () => {
   return (
     <div>{empData.map((ele)=>(
         <>
-        <Link to={`http://localhost:3000/${ele.firstName}`} key={ele.id}>
+        <Link to={`https://mkite.vercel.app/${ele.firstName}`} key={ele.id}>
         <h1 className='text-blace mx-4 '>{ele.firstName}</h1>
         </Link>
         </>
